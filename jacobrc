@@ -1,0 +1,29 @@
+vers="21 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
+shopt -s extglob
+export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
+PATH=$PATH:/home/jacob/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export PATH
+#export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
+export TERM=xterm; export LANG=C; df -h &>/dev/null && alias d='df -h'
+GRN='\[\033[01;32m\]'  R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01;37m\]'
+BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
+LTZ=DST
+#PROMPT_COMMAND='RET=0; if [  != 0 ] ; then echo -e "\e[00;31mreturn code: \e[033m"; fi'
+PS1="\u@\h:\w (\@  - \d) v$vers\n$ ";
+if [ "$USER" == 'root' ]; then PS1="\u@\h:\w (\@ - \d) v\n# "; fi
+if [ "$UID" -eq 0 ]; then PS1="\u@\h:\w (\@ - \d) v\n# "; fi
+export PS1; bind '"\C-i":complete'; set -o vi
+ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh='ls -lh' lha='ls -lha' lhtr='ls -lhtr'; fi;
+ps ax &>/dev/null || alias pg='ps -ef | egrep -i'; export EDITOR=vi; alias v=vi
+alias v=vim; export EDITOR=vim;
+if which vim &>/dev/null && [ -e ~/.vimrc.jacob ]; then alias v='vim -u ~/.vimrc.jacob '; fi
+PAGER=more; PAGER=less;
+alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egrep h=history j=jobs l=ls ld='ls -ld' les='less -N' lsa='ls -a' ltr='ls -ltr' kil='kill' pg='ps ax | egrep -i' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' ng='netstat -an | egrep -i ' s=ssh  ta='tmux a' pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='screen -h 2000' gvs='egrep -vi ".svn/|debian/"' cmm='./configure && make && make install' mm='make && make install' tf='terraform '
+alias py='python3.8' pip=pip3.8 sl3=sqlite3 in=instruqt kc=kubectl vl=vault
+mcd () { mkdir $1; cd $1; }
+e () { date -d @; }
+alias tj="tar jxvf"
+if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
+if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
+#eval "$(dircolors .dir_colors)"
+#export HISTIGNORE="[ \t]*:export *TOKEN*:export *SECRET*"
