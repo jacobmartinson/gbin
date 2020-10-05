@@ -20,7 +20,7 @@ if which vim &>/dev/null && [ -e ~/.vimrc.jacob ]; then alias v='vim -u ~/.vimrc
 PAGER=more; PAGER=less;
 alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egrep h=history j=jobs l=ls ld='ls -ld' les='less -N' lsa='ls -a' ltr='ls -ltr' kil='kill' pg='ps ax | egrep -i' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' ng='netstat -an | egrep -i ' s=ssh  ta='tmux a' pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='screen -h 2000' gvs='egrep -vi ".svn/|debian/"' cmm='./configure && make && make install' mm='make && make install' tf='terraform '
 alias py='python3.8' pip=pip3.8 sl3=sqlite3 in=instruqt kc=kubectl vl=vault gpom='git push origin master'
-alias unseal='vault operator unseal' peers='vault operator raft list-peers'
+alias unseal='vault operator unseal' peers='vault operator raft list-peers' status='vault status'
 mcd () { mkdir $1; cd $1; }
 e () { date -d @; }
 alias tj="tar jxvf"
