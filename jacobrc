@@ -23,7 +23,7 @@ alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egr
 alias py='python3.8' pip=pip3.8 sl3=sqlite3 in=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
-alias unseal='echo "#vault operator unseal"; vault operator unseal'
+alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary
 push () { git commit -am "$1"; git push; }
 mcd () { mkdir $1; cd $1; }
 e () { date -d @; }
