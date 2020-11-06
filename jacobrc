@@ -1,4 +1,4 @@
-vers="24 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
+vers="25 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 #export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
@@ -10,9 +10,9 @@ GRN='\[\033[01;32m\]'  R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01
 BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
 LTZ=DST
 #PROMPT_COMMAND='RET=0; if [  != 0 ] ; then echo -e "\e[00;31mreturn code: \e[033m"; fi'
-PS1="\u@\h:\w (\@  - \d) v$vers\n$ ";
-if [ "$USER" == 'root' ]; then PS1="\u@\h:\w (\@ - \d) v\n# "; fi
-if [ "$UID" -eq 0 ]; then PS1="\u@\h:\w (\@ - \d) v\n# "; fi
+PS1="\u@\h:\w (\@  - \d) v${vers}\n$ ";
+if [ "$USER" == 'root' ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
+if [ "$UID" -eq 0 ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
 export PS1; bind '"\C-i":complete'; set -o vi
 ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh='ls -lh' lha='ls -lha' lhtr='ls -lhtr'; fi;
 ps ax &>/dev/null || alias pg='ps -ef | egrep -i'; export EDITOR=vi; alias v=vi
@@ -28,7 +28,10 @@ push () { git commit -am "$1"; git push; }
 mcd () { mkdir $1; cd $1; }
 e () { date -d @; }
 alias tj="tar jxvf"
-if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
-if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
+export VAULT_SKIP_VERIFY=true
+
 #eval "$(dircolors .dir_colors)"
 #export HISTIGNORE="[ \t]*:export *TOKEN*:export *SECRET*"
+
+if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
+if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
