@@ -1,4 +1,4 @@
-vers="25 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
+vers="26 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 #export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
