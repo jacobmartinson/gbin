@@ -2,7 +2,7 @@ vers="26 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 #export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
-PATH=$PATH:/home/jacob/gbin:/home/jacob/bin:/home/jacob/.local/bin:/home/jacob/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH
 #export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
 export TERM=xterm; export LANG=C; df -h &>/dev/null && alias d='df -h'
