@@ -5,7 +5,7 @@ export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH
 #export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
-export TERM=xterm; export LANG=C; df -h &>/dev/null && alias d='df -h'
+export TERM=xterm; export LANG=C; 
 GRN='\[\033[01;32m\]'  R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01;37m\]'
 BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
 LTZ=DST
@@ -21,6 +21,7 @@ if which vim &>/dev/null && [ -e ~/.vimrc.jacob ]; then alias v='vim -u ~/.vimrc
 PAGER=more; PAGER=less;
 alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egrep h=history j=jobs l=ls ld='ls -ld' les='less -N' lsa='ls -a' ltr='ls -ltr' kil='kill' pg='ps ax | egrep -i' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' ng='netstat -an | egrep -i ' s=ssh  ta='tmux a' pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='screen -h 2000' gvs='egrep -vi ".svn/|debian/"' cmm='./configure && make && make install' mm='make && make install' tf='terraform '
 alias py='python3.8' pip=pip3.8 sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
+alias d=docker
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary
