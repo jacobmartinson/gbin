@@ -2,6 +2,7 @@ vers="27 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
+export PROMPT_COMMAND="history -a; history -n"
 PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH
 #export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
@@ -9,7 +10,6 @@ export TERM=xterm; export LANG=C;
 GRN='\[\033[01;32m\]'  R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01;37m\]'
 BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
 LTZ=DST
-#PROMPT_COMMAND='RET=0; if [  != 0 ] ; then echo -e "\e[00;31mreturn code: \e[033m"; fi'
 PS1="\u@\h:\w (\@  - \d) v${vers}\n$ ";
 if [ "$USER" == 'root' ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
 if [ "$UID" -eq 0 ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
