@@ -24,7 +24,7 @@ alias py='python3.8' pip=pip3.8 sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*
 alias d=docker
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
-alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary
+alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl
 push () { git commit -am "$1"; git push; }
 mcd () { mkdir $1; cd $1; }
 e () { date -d @; }
