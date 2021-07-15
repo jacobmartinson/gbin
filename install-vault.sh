@@ -1,3 +1,4 @@
+tmpout=/tmp/vault.$$
 curl -s -o $tmpout https://www.vaultproject.io/downloads
 VER=`egrep -o '"version":".\..\.."'  $tmpout | head -1  | cut -f4 -d'"'`
 rm $tmpout
