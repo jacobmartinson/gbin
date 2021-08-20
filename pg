@@ -1,0 +1,6 @@
+tmpfile=/tmp/.grep.$$
+>$tmpfile
+
+ps aux > $tmpfile
+head -1 $tmpfile
+egrep $1 $tmpfile
