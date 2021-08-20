@@ -3,7 +3,7 @@ shopt -s extglob
 export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=1000; export HISTTIMEFORMAT='%F %T '
 #export PROMPT_COMMAND="history -a; history -n"
-PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/home/jacob/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH
 #export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
 export TERM=xterm; export LANG=C; 
@@ -15,12 +15,12 @@ if [ "$USER" == 'root' ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
 if [ "$UID" -eq 0 ]; then PS1="\u@\h:\w (\@ - \d) v${vers}\n# "; fi
 export PS1; bind '"\C-i":complete'; set -o vi
 ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh='ls -lh' lha='ls -lha' lhtr='ls -lhtr'; fi;
-ps ax &>/dev/null || alias pg='ps -ef | egrep -i'; export EDITOR=vi; alias v=vi
+export EDITOR=vi; alias v=vi
 alias v=vim; export EDITOR=vim;
 if which vim &>/dev/null && [ -e ~/.vimrc.jacob ]; then alias v='vim -u ~/.vimrc.jacob '; fi
 PAGER=more; PAGER=less;
 alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egrep h=history j=jobs l=ls ld='ls -ld' les='less -N' lsa='ls -a' ltr='ls -ltr' 
-alias kil='kill' pg='ps ax | egrep -i' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' ng='netstat -an | egrep -i ' s=ssh  ta='tmux a' 
+alias kil='kill' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' s=ssh  ta='tmux a' 
 alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' 
 alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
 alias cmm='./configure && make && make install' mm='make && make install' tf='terraform '
