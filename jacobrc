@@ -24,7 +24,7 @@ alias kil='kill' pg='ps ax | egrep -i' ifu='ifconfig | egrep "Link|MTU|inet"; ne
 alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' 
 alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
 alias cmm='./configure && make && make install' mm='make && make install' tf='terraform '
-alias py='python3.8' pip=pip3.8 sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
+alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
 alias d=docker
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
