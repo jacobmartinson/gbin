@@ -4,3 +4,5 @@ tmpfile=/tmp/.grep.$$
 sudo netstat -anp > $tmpfile
 head -1 $tmpfile
 egrep $1 $tmpfile
+
+rm $tmpfile
