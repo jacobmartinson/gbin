@@ -20,7 +20,7 @@ sudo chown -R ubuntu:ubuntu ~ubuntu
 
 cd ~ubuntu/gbin && sudo cp pg ng /usr/local/bin
 
-mkdir -p .vim/colors 
+cd; mkdir -p .vim/colors 
 cat > .vim/colors/jacobm3.vim <<EOF
 set background=dark
 hi clear
