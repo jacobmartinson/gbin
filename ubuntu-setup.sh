@@ -1,16 +1,12 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND=noninteractive
-add-apt-repository main
-add-apt-repository universe
-add-apt-repository restricted
-add-apt-repository multiverse
 
 # add hashi stuff
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update
-sudo apt-get upgrade -y
+# sudo apt-get upgrade -y
 sudo apt-get install -y nmap bzip2 net-tools git terraform vault htop 
 
 # add environment
