@@ -16,7 +16,7 @@ chmod +x gbin/*
 
 echo '. ~/gbin/jacobrc'  >> ~/.bashrc
 
-chown -R ubuntu:ubuntu ~ubuntu
+sudo chown -R ubuntu:ubuntu ~ubuntu
 
 cd ~ubuntu/gbin && sudo cp pg ng /usr/local/bin
 
