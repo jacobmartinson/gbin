@@ -14,8 +14,8 @@ cd ~ubuntu
 git clone https://github.com/jacobm3/gbin.git
 chmod +x gbin/*
 
-echo '. ~jacob/gbin/jacobrc'  >> ~ubuntu/.bashrc
-echo '. ~jacob/gbin/jacobrc'  | sudo tee -a /root/.bashrc
+echo '. ~$USER/gbin/jacobrc'  >> ~ubuntu/.bashrc
+echo '. ~$USER/gbin/jacobrc'  | sudo tee -a /root/.bashrc
 
 chown -R ubuntu:ubuntu ~ubuntu
 
