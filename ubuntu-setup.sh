@@ -83,3 +83,5 @@ EOF
 sudo mkdir -p /root/.vim/colors 
 sudo cp /home/$user/.vim/colors/jacobm3.vim /root/.vim/colors
 sudo cp /home/$user/.vimrc /root
+echo ". /home/$user/gbin/jacobrc" | sudo tee /root/.bashrc
+
