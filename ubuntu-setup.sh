@@ -9,7 +9,7 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y nmap bzip2 net-tools git terraform vault htop sysstat iotop
+sudo apt-get install -y nmap bzip2 nc net-tools git terraform vault htop sysstat iotop
 
 # add environment
 cd /home/$user
