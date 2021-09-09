@@ -18,13 +18,13 @@ cd /home/$user
 git clone https://github.com/jacobm3/gbin.git
 chmod +x gbin/*
 
-echo '. ~/gbin/jacobrc'  >> ~/.bashrc
+echo '. ~/gbin/jacobrc'  >> /home/$user/.bashrc
 
 sudo chown -R $user:$user /home/$user
 
-cd ~/gbin && sudo cp pg ng /usr/local/bin
+cd /home/$user/gbin && sudo cp pg ng /usr/local/bin
 
-cd; mkdir -p .vim/colors 
+cd $user; mkdir -p .vim/colors 
 cat > .vim/colors/jacobm3.vim <<EOF
 set background=dark
 hi clear
@@ -71,7 +71,7 @@ endif
 hi Ignore                       ctermfg=LightGrey
 EOF
 
-cat > ~/.vimrc <<EOF
+cat > /home/$user/.vimrc <<EOF
 set number
 set ts=4
 set autoindent
