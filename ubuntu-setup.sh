@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 user=ubuntu
 
@@ -24,7 +24,7 @@ sudo chown -R $user:$user /home/$user
 
 cd /home/$user/gbin && sudo cp pg ng /usr/local/bin
 
-cd $user; mkdir -p .vim/colors 
+cd /home/$user && mkdir -p .vim/colors 
 cat > .vim/colors/jacobm3.vim <<EOF
 set background=dark
 hi clear
