@@ -4,6 +4,10 @@ user=ubuntu
 
 export DEBIAN_FRONTEND=noninteractive
 
+# fix broken hardware crypto acceleration in virtualbox+wsl
+sudo mkdir -p /etc/gcrypt
+echo all | sudo tee -a /etc/gcrypt/hwf.deny
+
 # add hashi stuff
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
