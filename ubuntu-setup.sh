@@ -6,7 +6,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 # fix broken hardware crypto acceleration in virtualbox+wsl
 sudo mkdir -p /etc/gcrypt
-echo all | sudo tee -a /etc/gcrypt/hwf.deny
+echo all | sudo tee /etc/gcrypt/hwf.deny
 
 # add hashi stuff
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
