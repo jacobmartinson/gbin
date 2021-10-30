@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-user=$(whoami)
+user=ubuntu
 
 export DEBIAN_FRONTEND=noninteractive
 
