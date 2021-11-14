@@ -22,7 +22,7 @@ alias a=alias ac=apt-cache ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egr
 alias kil='kill' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' s=ssh  ta='tmux a' 
 alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' 
 alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
-alias cmm='./configure && make && make install' mm='make && make install' 
+alias cmm='./configure && make && make install' mm='make && make install'  md=mkdir 
 alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
 alias d=docker
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
