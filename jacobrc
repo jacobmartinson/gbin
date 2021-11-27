@@ -1,7 +1,7 @@
 vers="27 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
-export HISTSIZE=1000; export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=1000; export HISTTIMEFORMAT='%F %T '; export HISTIGNORE='*AWS_SECRET*:*AWS_SESSION*'
 #export PROMPT_COMMAND="history -a; history -n"
 PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/home/jacob/bin:/home/jacob/gbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 export PATH
