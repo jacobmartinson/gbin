@@ -15,24 +15,39 @@ cat > syslog-ng.conf <<EOF
         mark-freq(10);
         keep-hostname(yes);
         };
-    source s_network_tcp { network(transport(tcp) port(1515)); };
-    source s_syslog_tcp { syslog(transport(tcp) port(1514)); };
-    destination d_messages {
+
+template t_imp {
+  template("$MSG\n");
+  template_escape(no);
+};
+
+source s_network_tcp {
+         network(
+           flags(no-parse)
+           transport(tcp) port(1515));
+       };
+
+source s_syslog_tcp { syslog(transport(tcp) port(1514)); };
+
+destination d_messages {
         file(
             "/var/log/syslog-ng/messages"
             owner("root")
             group("root")
             perm(0644)
             ); };
-    destination d_audit {
+destination d_audit {
         file(
             "/var/log/syslog-ng/audit"
+            template(t_imp)
             owner("root")
             group("root")
             perm(0644)
             ); };
-    log { source(s_syslog_tcp); destination(d_messages); };
-    log { source(s_network_tcp); destination(d_audit); };
+
+log { source(s_syslog_tcp); destination(d_messages); };
+log { source(s_network_tcp); destination(d_audit); };
+
 EOF
 
 sudo systemctl restart syslog-ng
