@@ -31,14 +31,14 @@ source s_syslog_tcp { syslog(transport(tcp) port(1514)); };
 
 destination d_messages {
         file(
-            "/var/log/syslog-ng/messages"
+            "/var/log/syslog-ng/messages.${YEAR}_${MONTH}_${DAY}"
             owner("root")
             group("root")
             perm(0644)
             ); };
 destination d_audit {
         file(
-            "/var/log/syslog-ng/audit"
+            "/var/log/syslog-ng/audit.${YEAR}_${MONTH}_${DAY}"
             template(t_imp)
             owner("root")
             group("root")
