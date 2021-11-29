@@ -2,6 +2,9 @@ sudo apt install -y syslog-ng
 
 cd /etc/syslog-ng
 sudo mv syslog-ng.conf syslog-ng.conf.dist
+sudo mkdir -p /var/log/syslog-ng
+sudo touch /var/log/syslog-ng/messages /var/log/syslog-ng/audit
+sudo chmod 644 /var/log/syslog-ng/messages /var/log/syslog-ng/audit
 
 cat > syslog-ng.conf <<EOF
 @version: 3.13
