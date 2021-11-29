@@ -39,3 +39,4 @@ sudo systemctl restart syslog-ng
 
 sudo netstat -anp | grep :151
 
+# vault audit enable socket address=10.0.143.159:1515 socket_type=tcp  
