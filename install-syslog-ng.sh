@@ -59,4 +59,4 @@ sudo netstat -anp | grep :151
 # sudo tee /etc/rsyslog.d/70-vault-remote.conf <<EOF
 # *.* @@10.0.143.159:1514
 # EOF
-# systemctl restart rsyslog
+# sudo systemctl restart rsyslog
