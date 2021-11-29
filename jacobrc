@@ -24,7 +24,7 @@ alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=z
 alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
 alias cmm='./configure && make && make install' mm='make && make install'  md=mkdir 
 alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
-alias d=docker ht='history | tail $*'
+alias d=docker ht='history | tail $*' nodate="awk '{\$1=\$2=\$3=\$4=\"\"; print \$0}'"
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
