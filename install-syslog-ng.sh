@@ -27,7 +27,7 @@ source s_network_tcp {
            transport(tcp) port(1515));
        };
 
-source s_syslog_tcp { syslog(transport(tcp) port(1514)); };
+source s_syslog_tcp { network(transport(tcp) port(1514)); };
 
 destination d_messages {
         file(
