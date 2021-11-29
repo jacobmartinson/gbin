@@ -6,7 +6,7 @@ sudo mkdir -p /var/log/syslog-ng
 sudo touch /var/log/syslog-ng/messages /var/log/syslog-ng/audit
 sudo chmod 644 /var/log/syslog-ng/messages /var/log/syslog-ng/audit
 
-cat > syslog-ng.conf <<EOF
+sudo tee > syslog-ng.conf <<EOF
 @version: 3.13
 @include "scl.conf"
 @include "/usr/share/syslog-ng/include/scl/system/tty10.conf"
