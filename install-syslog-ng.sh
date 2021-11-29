@@ -16,37 +16,40 @@ sudo tee > /etc/syslog-ng/syslog-ng.conf <<EOF
         keep-hostname(yes);
         };
 
+# Vault audit logs
 template t_imp {
-  template("$MSG\n");
+  template("\$MSG\n");
   template_escape(no);
 };
 
-source s_network_tcp {
+source s_vault_tcp {
          network(
            flags(no-parse)
            transport(tcp) port(1515));
        };
 
-source s_syslog_tcp { network(transport(tcp) port(1514)); };
-
-destination d_messages {
+destination d_vault {
         file(
-            "/var/log/syslog-ng/messages.\${YEAR}_\${MONTH}_\${DAY}.log"
-            owner("root")
-            group("root")
-            perm(0644)
-            ); };
-destination d_audit {
-        file(
-            "/var/log/syslog-ng/audit.\${YEAR}_\${MONTH}_\${DAY}.log"
+            "/var/log/syslog-ng/audit"
             template(t_imp)
             owner("root")
             group("root")
             perm(0644)
             ); };
 
-log { source(s_syslog_tcp); destination(d_messages); };
-log { source(s_network_tcp); destination(d_audit); };
+# System messages
+source s_messages_tcp { network(transport(tcp) port(1514)); };
+destination d_messages {
+        file(
+            "/var/log/syslog-ng/messages"
+            owner("root")
+            group("root")
+            perm(0644)
+            ); };
+
+log { source(s_messages_tcp); destination(d_messages); };
+log { source(s_vault_tcp); destination(d_vault); };
+
 
 EOF
 
