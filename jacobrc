@@ -36,7 +36,7 @@ export VAULT_SKIP_VERIFY=true
 export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
 export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
-alias tf="time terraform" tfs="terraform show tf.plan.out | egrep -i 'will be|name|plan:'"
+alias tf="time terraform" tfs="terraform show tf.plan.out | egrep -i 'region|zone|will be|name|plan:'"
 
 #eval "$(dircolors .dir_colors)"
 #export HISTIGNORE="[ \t]*:export *TOKEN*:export *SECRET*"
