@@ -32,7 +32,8 @@ push () { git commit -am "$1"; git push; }
 mcd () { mkdir $1; cd $1; }
 e () { date -d @; }
 alias tj="tar jxvf"
-export VAULT_SKIP_VERIFY=true
+# export VAULT_SKIP_VERIFY=true
+complete -C /usr/bin/vault vault
 export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
 export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
