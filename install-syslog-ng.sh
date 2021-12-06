@@ -57,9 +57,11 @@ sudo systemctl restart syslog-ng
 
 sudo netstat -anp | grep :151
 
-# vault audit enable socket address=10.0.143.159:1515 socket_type=tcp  
+# forward vault audit logs
+vault audit enable socket address=10.0.143.159:1515 socket_type=tcp  
 
-# sudo tee /etc/rsyslog.d/70-vault-remote.conf <<EOF
-# *.* @@10.0.143.159:1514
-# EOF
-# sudo systemctl restart rsyslog
+# forward system logs from vault nodes
+sudo tee /etc/rsyslog.d/70-vault-remote.conf <<EOF
+*.* @@10.0.143.159:1514
+EOF
+sudo systemctl restart rsyslog
