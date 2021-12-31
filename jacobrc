@@ -28,6 +28,7 @@ alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git p
 alias d=docker ht='history | tail $*' nodate="awk '{\$1=\$2=\$3=\$4=\"\"; print \$0}'"
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'
+alias vs='echo $VAULT_ADDR; echo; vault status; echo; vault token lookup | egrep -v ^id'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
 push () { git commit -am "$1"; git push; }
 mcd () { mkdir $1; cd $1; }
