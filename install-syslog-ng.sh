@@ -1,4 +1,4 @@
-sudo apt install -y syslog-ng
+sudo DEBIAN_FRONTEND=noninteractive apt install -y syslog-ng
 
 cd /etc/syslog-ng
 sudo mv syslog-ng.conf syslog-ng.conf.dist
