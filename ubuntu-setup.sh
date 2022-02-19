@@ -1,7 +1,5 @@
 #!/bin/bash -x
 
-user=ubuntu
-
 export DEBIAN_FRONTEND=noninteractive
 
 # fix broken hardware crypto acceleration in virtualbox+wsl
@@ -18,17 +16,17 @@ sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop
 #sudo apt-get install -y terraform vault
 
 # add environment
-cd /home/$user
+cd /home/$USER
 git clone https://github.com/jacobm3/gbin.git
 chmod +x gbin/*
 
-echo '. ~/gbin/jacobrc'  >> /home/$user/.bashrc
+echo '. ~/gbin/jacobrc'  >> /home/$USER/.bashrc
 
-sudo chown -R $user:$user /home/$user
+sudo chown -R $USER:$USER /home/$USER
 
-cd /home/$user/gbin && sudo cp pg ng /usr/local/bin
+cd /home/$USER/gbin && sudo cp pg ng /usr/local/bin
 
-cd /home/$user && mkdir -p .vim/colors 
+cd /home/$USER && mkdir -p .vim/colors 
 cat > .vim/colors/jacobm3.vim <<EOF
 set background=dark
 hi clear
@@ -75,7 +73,7 @@ endif
 hi Ignore                       ctermfg=LightGrey
 EOF
 
-cat > /home/$user/.vimrc <<EOF
+cat > /home/$USER/.vimrc <<EOF
 set number
 set ts=4
 set autoindent
@@ -87,7 +85,7 @@ syntax on
 EOF
 
 sudo mkdir -p /root/.vim/colors 
-sudo cp /home/$user/.vim/colors/jacobm3.vim /root/.vim/colors
-sudo cp /home/$user/.vimrc /root
-echo ". /home/$user/gbin/jacobrc" | sudo tee /root/.bashrc
+sudo cp /home/$USER/.vim/colors/jacobm3.vim /root/.vim/colors
+sudo cp /home/$USER/.vimrc /root
+echo ". /home/$USER/gbin/jacobrc" | sudo tee /root/.bashrc
 
