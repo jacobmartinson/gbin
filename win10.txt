@@ -1,0 +1,3 @@
+# admin command prompt
+sc stop wsearch
+sc config wsearch start=disabled
