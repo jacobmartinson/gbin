@@ -2,13 +2,11 @@ git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.b
 
 echo '%sudo  ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
 
-sudo apt install curl
-
-curl -fsSL https://raw.githubusercontent.com/jacobm3/gbin/main/ubuntu-setup.sh | bash 
+sudo apt install curl && curl -fsSL https://raw.githubusercontent.com/jacobm3/gbin/main/ubuntu-setup.sh | bash 
 
 
 ## desktop env
 sudo snap install bitwarden
 
 
-setxkbmap -option caps:swapescape
+echo 'setxkbmap -option caps:swapescape' >> ~/.jacobrc
