@@ -32,7 +32,7 @@ alias base64='base64 -w0' bd='base64 -d'
 alias vs='echo VAULT_ADDR=$VAULT_ADDR; echo; vault status; echo; vault token lookup | egrep -v ^id'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
 push () { git commit -am "$1"; git push; }
-mcd () { mkdir $1; cd $1; }
+mcd () { mkdir -p $1; cd $1; }
 e () { date -d @; }
 alias tj="tar jxvf"
 # export VAULT_SKIP_VERIFY=true
