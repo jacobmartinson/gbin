@@ -14,3 +14,5 @@ sudo apt install brave-browser
 # bitwarden
 sudo snap install bitwarden
 
+# msft vs code
+sudo snap install --classic code
