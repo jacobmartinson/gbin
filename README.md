@@ -9,4 +9,6 @@ sudo apt install curl && curl -fsSL https://raw.githubusercontent.com/jacobm3/gb
 sudo snap install bitwarden
 
 
-echo 'setxkbmap -option caps:swapescape' >> ~/.jacobrc
+echo 'setxkbmap -option caps:swapescape' >> ~/.jacobrc.local
+
+gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
