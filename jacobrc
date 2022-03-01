@@ -34,6 +34,7 @@ alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary 
 push () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
 e () { date -d @; }
+pcert () { openssl x509 -in $1 -text -noout; }
 alias tj="tar jxvf"
 # export VAULT_SKIP_VERIFY=true
 complete -C /usr/bin/vault vault
