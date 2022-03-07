@@ -1,18 +1,16 @@
-tmpout=/tmp/vault.$$
-curl -s -o $tmpout https://www.vaultproject.io/downloads
-VER=`egrep -o '"version":".\..\.."'  $tmpout | head -1  | cut -f4 -d'"'`
-rm $tmpout
+#!/bin/bash
 
-VER=1.7.3
-EURL="https://releases.hashicorp.com/vault/${VER}+ent/vault_${VER}+ent_linux_amd64.zip"
+
+latest=$(curl -s https://www.vaultproject.io/downloads  | sed 's/"/\n/g' | grep .zip | grep linux | grep amd64 | grep ent | grep https | tail -1)
+
+mkdir ~/bin
 cd ~/bin
-wget $EURL
+wget $latest
 
-wget https://releases.hashicorp.com/vault/${VER}/vault_${VER}_linux_amd64.zip
+file=$(ls -tr vault*.zip | tail -1)
 
-rm -f vault vault-ent
-unzip vault_${VER}+ent_linux_amd64.zip
-mv vault vault-ent
-unzip vault_${VER}_linux_amd64.zip
+unzip $file vault
 
 vault version
+
+rm $file
