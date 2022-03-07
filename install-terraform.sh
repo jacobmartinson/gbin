@@ -1,15 +1,15 @@
 #!/bin/bash
 
-URL=`curl -s $tmpout https://www.terraform.io/downloads.html | grep linux_amd64.zip | cut -d'"' -f2`
+latest=$(curl -s https://www.terraform.io/downloads  | sed 's/"/\n/g' | grep .zip | grep linux | grep amd64 | grep https | tail -1)
 
+mkdir ~/bin
 cd ~/bin
+wget $latest
 
-wget $URL
-file=`ls -tr terraform_*_linux_amd64.zip | tail -1`
+file=$(ls -tr terraform*.zip | tail -1)
 
-rm -f terraform
-
-unzip $file
-rm $file
+unzip $file terraform
 
 terraform version
+
+rm $file
