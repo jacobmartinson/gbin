@@ -14,3 +14,13 @@ sudo snap install bitwarden
 echo 'setxkbmap -option caps:swapescape' >> ~/.jacobrc.local
 
 gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'
+
+  
+  
+Eric Reeves, 
+#!/bin/bash
+/usr/bin/setxkbmap -option 'caps:ctrl_modifier'
+/usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
+Tap Caps Lock, it's Escape.  Hold it, it's Control.
+Best of both words.
+  
