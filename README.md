@@ -23,4 +23,6 @@ Eric Reeves,
 /usr/bin/xcape -e 'Caps_Lock=Escape' -t 100
 Tap Caps Lock, it's Escape.  Hold it, it's Control.
 Best of both words.
+Just "yay -S xcape" and that little 2 liner will enable it.
+
   
