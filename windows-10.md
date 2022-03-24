@@ -7,7 +7,11 @@
 
 `Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage`
 
-
+## admin command prompt
+```
+sc stop wsearch
+sc config wsearch start=disabled
+```
 
 ## apply windows updates
 
