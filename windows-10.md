@@ -1,6 +1,6 @@
 All commands run from powershell admin prompt.
 
-## disable ntfs atime from powershell admin
+## disable ntfs atime
 
 `fsutil behavior set disablelastaccess 1`
 
