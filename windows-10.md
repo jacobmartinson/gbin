@@ -1,3 +1,10 @@
+All commands run from powershell admin prompt.
+
+## disable ntfs atime from powershell admin
+
+`fsutil behavior set disablelastaccess 1`
+
+reboot
 
 ## disable defender
 
@@ -7,13 +14,14 @@
 
 `Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage`
 
-## admin command prompt
+## disable windows search service
 ```
 sc stop wsearch
 sc config wsearch start=disabled
 ```
 
 ## apply windows updates
+start -> check for updates
 
 ## run debloat scripts
 https://github.com/Sycnex/Windows10Debloater
@@ -26,9 +34,7 @@ https://github.com/Sycnex/Windows10Debloater
 - background apps
 - disable everything except spotify and ubuntu
 
-## disable ntfs atime from powershell admin
 
-`fsutil behavior set disablelastaccess 1`
 
 ## set noatime in WSL, /etc/fstab
 
