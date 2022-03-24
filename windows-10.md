@@ -7,6 +7,7 @@ All commands run from powershell admin prompt.
 reboot
 
 ## disable defender
+Lasts until next reboot. Good to do before applying Windows updates.
 
 `Set-MpPreference -DisableRealtimeMonitoring $true`
 
