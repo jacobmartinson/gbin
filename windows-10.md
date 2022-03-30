@@ -37,7 +37,7 @@ https://github.com/Sycnex/Windows10Debloater
 
 
 
-## set noatime in WSL, /etc/fstab
+## install WSL2/Ubuntu, then set noatime in WSL, /etc/fstab
 
 `LABEL=cloudimg-rootfs   /        ext4   defaults,noatime        0 0`
 
