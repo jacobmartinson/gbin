@@ -27,7 +27,7 @@ alias cmm='./configure && make && make install' mm='make && make install'  md=mk
 alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
 alias d=docker ht='history | tail $*' nodate="awk '{\$1=\$2=\$3=\$4=\"\"; print \$0}'"
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
-alias status='echo "#vault status"; vault status'  em=" sed 's/,/\n/g'; echo Jacob Martinson \<jmartinson@hashicorp.com\>"
+alias status='echo "#vault status"; vault status'  em='sed '\''s/,/\n/g'\''; echo Jacob Martinson jmartinson@hashicorp.com'
 alias base64='base64 -w0' bd='base64 -d' htop='htop -d 30 -s PERCENT_CPU' p1='ping 1.1.1.1'
 alias vs='echo VAULT_ADDR=$VAULT_ADDR; echo; vault status; echo; vault token lookup | egrep -v ^id'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
