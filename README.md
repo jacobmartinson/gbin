@@ -40,3 +40,7 @@ Just "yay -S xcape" and that little 2 liner will enable it.
   
   
 https://unsplash.com/
+
+  
+## bpytop
+  sudo apt-get update &&  sudo apt install python3-pip && pip3 install bpytop --upgrade
