@@ -25,6 +25,7 @@ template t_imp {
 source s_vault_tcp {
          network(
            flags(no-parse)
+           log-msg-size(268435456)
            transport(tcp) port(1515));
        };
 
