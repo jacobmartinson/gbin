@@ -59,6 +59,8 @@ sudo netstat -anp | grep :151
 
 # forward vault audit logs
 vault audit enable socket address=10.0.143.159:1515 socket_type=tcp hmac_accessor=false
+vault audit enable socket address=127.0.0.1:1515 socket_type=tcp hmac_accessor=false log_raw=true
+
 
 # forward system logs from vault nodes
 sudo tee /etc/rsyslog.d/70-vault-remote.conf <<EOF
