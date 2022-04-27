@@ -4,6 +4,8 @@ All commands run from powershell admin prompt.
 
 `fsutil behavior set disablelastaccess 1`
 
+## disable background apps
+
 reboot
 
 ## disable defender
