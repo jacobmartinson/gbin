@@ -31,6 +31,7 @@ alias status='echo "#vault status"; vault status'  em='sed '\''s/,/\n/g'\''; ech
 alias base64='base64 -w0' bd='base64 -d' htop='htop -d 30 -s PERCENT_CPU' p1='ping 1.1.1.1'
 alias vs='echo VAULT_ADDR=$VAULT_ADDR; echo; vault status; echo; vault token lookup | egrep -v ^id'
 alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
+alias as=astrocloud
 push () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
 e () { date -d @; }
