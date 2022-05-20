@@ -18,7 +18,7 @@ if exists("syntax_on")
   syntax reset
 endif
 let colors_name = "jacobm3"
-hi Normal ctermbg=233 ctermfg=253
+hi Normal ctermbg=0 ctermfg=253
 hi ErrorMsg         term=standout   ctermbg=DarkRed ctermfg=White
 hi IncSearch        term=reverse        cterm=bold
 hi StatusLine   term=bold                   cterm=bold
