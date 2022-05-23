@@ -1,8 +1,11 @@
 echo '%sudo  ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
 
 ln -s /mnt/c/Users/jacob/Documents documents
+
 ln -s /mnt/c/Users/jacob/Downloads downloads
+
 mkdir documents/j
+
 ln -s documents/j .
 
 sudo apt install -y curl git
