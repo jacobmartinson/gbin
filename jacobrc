@@ -24,7 +24,7 @@ alias kil='kill' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -lt
 alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' 
 alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
 alias cmm='./configure && make && make install' mm='make && make install'  md=mkdir 
-alias py='python3' sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
+alias py=python3 py3=python3 sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
 alias d=docker ht='history | tail $*' nodate="awk '{\$1=\$2=\$3=\$4=\"\"; print \$0}'"
 alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
 alias status='echo "#vault status"; vault status'  em='sed '\''s/,/\n/g'\''; echo Jacob Martinson jmartinson@hashicorp.com'
