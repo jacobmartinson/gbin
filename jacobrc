@@ -1,54 +1,82 @@
 vers="27 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
-export HISTCONTROL=ignoreboth; export HISTSIZE=10000; export HISTTIMEFORMAT='%F %T '
-export HISTSIZE=1000; export HISTTIMEFORMAT='%F %T '; export HISTIGNORE='*AWS_SECRET*:*AWS_SESSION*:*vault token*:*VAULT_TOKEN*'
-
-#export PROMPT_COMMAND="history -a; history -n"
-PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/home/jacob/bin:/home/jacob/gbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-export PATH
-#export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/usr/local/ssl/lib
-export TERM=xterm-256color; export LANG=C; 
-GRN='\[\033[01;32m\]'  R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01;37m\]'
-BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
-LTZ=DST
-PS1="${CYAN}\u@\h:\w         \D{%F} \t\n$ ${O}" 
-if [ "$USER" == 'root' ]; then PS1="$R\u$O@\h:\w         \D{%F} \t\n# "; fi
-export PS1; bind '"\C-i":complete'; set -o vi
+export HISTCONTROL=ignoreboth HISTSIZE=10000 HISTTIMEFORMAT='%F %T ' HISTTIMEFORMAT='%F %T ' HISTIGNORE='*AWS_SECRET*:*AWS_SESSION*:*vault token*:*VAULT_TOKEN*'
+export PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin
+export TERM=xterm-256color LANG=C GRN='\[\033[01;32m\]' R='\[\033[01;31m\]' CYAN='\[\033[01;36m\]' WHT='\[\033[01;37m\]' BLUE='\[\033[01;34m\]' MAG='\[\033[01;35m\]' O='\[\033[00m\]'
+export LTZ=DST PS1="${CYAN}\u@\h:\w         \D{%F} \t\n$ ${O}" 
+if [ "$USER" == 'root' ]; then export PS1="$R\u$O@\h:\w         \D{%F} \t\n# "; fi
+bind '"\C-i":complete'; set -o vi
 ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh='ls -lh' lha='ls -lha' lhtr='ls -lhtr'; fi;
-export EDITOR=vi; alias v=vi
-alias v=vim; export EDITOR=vim;
-if which vim &>/dev/null && [ -e ~/.vimrc.jacob ]; then alias v='vim -u ~/.vimrc.jacob '; fi
-PAGER=more; PAGER=less;
-alias a=alias ac=apt-cache acs='apt-cache search' ag=apt-get c=cat ci='svn ci' cx='chmod +x' f=fg g=egrep h=history j=jobs l=ls ld='ls -ld' les='less -N' lsa='ls -a' ltr='ls -ltr' 
-alias kil='kill' ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn' ltt='ls -ltr | tail' s=ssh  ta='tmux a' 
-alias pug='ps aux | egrep -i ' sd='sudo bash' st='svn st' t=tail wh=which zles=zless cdi='cd /etc/init.d' agug='apt-get upgrade ' agud='apt-get update' lhtrt='ls -lhtr | tail ' 
-alias scpp='echo -n LAPTOP-205JQ4O5; echo -n ':'; ' hg='history | egrep ' sc='systemctl ' gvs='egrep -vi ".svn/|debian/"' 
-alias cmm='./configure && make && make install' mm='make && make install'  md=mkdir 
-alias py=python3 py3=python3 sl3=sqlite3 ins=instruqt kc=kubectl vl="vault $*" gpom='git push origin master'
-alias d=docker ht='history | tail $*' nodate="awk '{\$1=\$2=\$3=\$4=\"\"; print \$0}'"
-alias peers='echo "#vault operator raft list-peers"; vault operator raft list-peers'
-alias status='echo "#vault status"; vault status'  em='sed '\''s/,/\n/g'\''; echo Jacob Martinson jmartinson@hashicorp.com'
-alias base64='base64 -w0' bd='base64 -d' htop='htop -d 30 -s PERCENT_CPU' p1='ping 1.1.1.1'
-alias vs='echo VAULT_ADDR=$VAULT_ADDR; echo; vault status; echo; vault token lookup | egrep -v ^id'
-alias unseal='echo "#vault operator unseal"; vault operator unseal' bo=boundary kc=kubectl sclist='systemctl list-units --type=service'
-alias as=astrocloud
-push () { git commit -am "$1"; git push; }
+export EDITOR=vim PAGER=less
+
+alias a='alias'
+alias ac='apt-cache'
+alias acs=astrocloud
+alias ag='apt-get'
+alias agud='apt-get update'
+alias agug='apt-get upgrade'
+alias base64='base64 -w0'
+alias bd='base64 -d'
+alias c='cat'
+alias cdi='cd /etc/init.d'
+alias cx='chmod +x'
+alias d='docker'
+alias egrep='egrep --color=auto'
+alias em='sed '\''s/,/\n/g'\''; echo Jacob Martinson jmartinson@hashicorp.com'
+alias f='fg'
+alias fgrep='fgrep --color=auto'
+alias g='egrep'
+alias h='history'
+alias hg='history | egrep '
+alias ht='history | tail $*'
+alias ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn'
+alias j='jobs'
+alias jq='jq -C'
+alias kc='kubectl'
+alias l='ls'
+alias la='ls -A'
+alias ld='ls -ld'
+alias les='less -N'
+alias less='less -R'
+alias lh='ls -lh'
+alias lha='ls -lha'
+alias lhtr='ls -lhtr'
+alias lhtrt='ls -lhtr | tail '
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+alias lsa='ls -a'
+alias ltr='ls -ltr'
+alias ltt='ls -ltr | tail'
+alias md='mkdir'
+alias p1='ping 1.1.1.1'
+alias pug='ps aux | egrep -i '
+alias py='python'
+alias py3='python3'
+alias s='ssh'
+alias sc='systemctl '
+alias sclist='systemctl list-units --type=service'
+alias sd='sudo bash'
+alias sl3='sqlite3'
+alias t='tail'
+alias tf='time terraform'
+alias tfa='time terraform apply'
+alias tfaa='time terraform apply -auto-approve'
+alias tfs='terraform show tf.plan.out | egrep -i '\''region|zone|will be|name|plan:'\'''
+alias v='vim'
+alias vl='vault '
+alias wh='which'
+alias zles='zless'
+
+gpush () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
-e () { date -d @; }
 pcert () { openssl x509 -in $1 -text -noout; }
-alias tj="tar jxvf"
-# export VAULT_SKIP_VERIFY=true
+complete -C /home/ubuntu/bin/kubectl kc
+complete -C /usr/bin/docker d
+complete -C /usr/bin/terraform tf
 complete -C /usr/bin/vault vault
 export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
 export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
-alias tf="time terraform" tfs="terraform show tf.plan.out | egrep -i 'region|zone|will be|name|plan:'" 
-alias tfaa="time terraform apply -auto-approve" tfa="time terraform apply"
-alias jq='jq -C'
-alias less='less -R'
-
-#eval "$(dircolors .dir_colors)"
-#export HISTIGNORE="[ \t]*:export *TOKEN*:export *SECRET*"
 
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
 if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
