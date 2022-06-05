@@ -12,7 +12,7 @@ export EDITOR=vim PAGER=less
 alias a='alias'
 alias ac='apt-cache'
 alias acs='apt-cache search'
-alias asc=astrocloud
+alias as=astro
 alias ag='apt-get'
 alias agud='apt-get update'
 alias agug='apt-get upgrade'
