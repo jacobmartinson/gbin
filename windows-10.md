@@ -44,5 +44,7 @@ https://github.com/Sycnex/Windows10Debloater
 `LABEL=cloudimg-rootfs   /        ext4   defaults,noatime        0 0`
 
 
+# ahk
+https://gist.github.com/volks73/1e889e01ad0a736159a5d56268a300a8
 
 
