@@ -1,0 +1,8 @@
+export VAULT_ADDR=http://127.0.0.1:8200
+export PATH=$PATH:/mnt/c/ProgramData/chocolatey/bin:/home/ubuntu/h/tf-helper/tfh/bin
+alias choco=choco.exe
+
+
+if [ ! $(pgrep cron | head 1) ]; then sudo service cron start; fi
+
+if [ ! $(pgrep docker | head 1) ]; then sudo service docker start; fi
